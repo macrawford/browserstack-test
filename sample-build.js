@@ -31,29 +31,47 @@ async function runTestWithCaps (capabilities) {
   await driver.quit();
 }
 const capabilities1 = {
-  'device': 'iPhone 12 Pro Max',
-  'os_version': '14',
-  'browserName': 'ios',
-  'realMobile': 'true',
-  'build': 'browserstack-build-1',
-  'name': 'Parallel test 1'
+    'device': 'iPhone 12 Pro Max',
+    'os_version': '14',
+    'browserName': 'ios',
+    'realMobile': 'true',
+    'build': 'browserstack-build-2',
+    'name': 'Parallel test 1'
 }
 const capabilities2 = {
-	'browser': 'firefox',
-  'browser_version': 'latest',
-  'os': 'Windows',
-  'os_version': '10',
-  'build': 'browserstack-build-1',
-  'name': 'Parallel test 2'
+    'browser': 'firefox',
+    'browser_version': 'latest',
+    'os': 'Windows',
+    'os_version': '10',
+    'build': 'browserstack-build-2',
+    'name': 'Parallel test 2'
 }
 const capabilities3 = {
-	'browser': 'safari',
-  'browser_version': 'latest',
-  'os': 'OS X',
-  'os_version': 'Big Sur',
-  'build': 'browserstack-build-1',
-  'name': 'Parallel test 3'
+    'browser': 'safari',
+    'browser_version': 'latest',
+    'os': 'OS X',
+    'os_version': 'Big Sur',
+    'build': 'browserstack-build-2',
+    'name': 'Parallel test 3'
+}
+const capabilities4 = {
+    'browser': 'Chrome',
+    'browser_version': 'latest-beta',
+    'os': 'Windows',
+    'os_version': '8.1',
+    'build': 'browserstack-build-2',
+    'name': 'Parallel test 4'
+}
+const capabilities5 = {
+    'device': 'Google Pixel 5',
+    'browserName': 'Android',
+    'os_version': '11.0',
+    'real_mobile': 'true',
+    'build': 'browserstack-build-2',
+    'name': 'Parallel test 5'
 }
 runTestWithCaps(capabilities1);
 runTestWithCaps(capabilities2);
 runTestWithCaps(capabilities3);
+runTestWithCaps(capabilities4);
+runTestWithCaps(capabilities5);
