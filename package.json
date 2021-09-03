@@ -1,0 +1,24 @@
+{
+  "name": "browserstack-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sample-build.js",
+  "dependencies": {
+    "browserstack-local": "^1.4.8",
+    "selenium-webdriver": "^4.0.0-rc-1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macrawford/browserstack-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macrawford/browserstack-test/issues"
+  },
+  "homepage": "https://github.com/macrawford/browserstack-test#readme"
+}

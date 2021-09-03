@@ -3,15 +3,6 @@ const webdriver = require('selenium-webdriver');
 var username = process.env.BROWSERSTACK_USERNAME;
 var accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
 var buildName = process.env.BROWSERSTACK_BUILD_NAME;
-var browserstackLocal = process.env.BROWSERSTACK_LOCAL;
-var browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER;
-const browserstack = require('browserstack-local');
-// Creates an instance of Local
-const bs_local = new browserstack.Local();
-const bs_local_args = { key: accessKey };
-bs_local.start(bs_local_args, function() {
-    console.log('Started BrowserStackLocalLLL');
-    console.log('BrowserStackLocal running:', bs_local.isRunning());
 
 async function runTestWithCaps (capabilities) {
   let driver = new webdriver.Builder()
@@ -52,8 +43,6 @@ const capabilities1 = {
     'browserstack.console': 'info',  // to enable console logs at the info level. You can also use other log levels here
     'browserstack.networkLogs': 'true',
     "build" : buildName, // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-	"browserstack.local" : browserstackLocal,
-	"browserstack.localIdentifier" : browserstackLocalIdentifier,
 	"browserstack.user" : username,
 	"browserstack.key" : accessKey
 }
@@ -67,8 +56,6 @@ const capabilities2 = {
     'browserstack.console': 'info',  // to enable console logs at the info level. You can also use other log levels here
     'browserstack.networkLogs': 'true',
     "build" : buildName, // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-	"browserstack.local" : browserstackLocal,
-	"browserstack.localIdentifier" : browserstackLocalIdentifier,
 	"browserstack.user" : username,
 	"browserstack.key" : accessKey
 }
@@ -82,8 +69,6 @@ const capabilities3 = {
     'browserstack.console': 'info',  // to enable console logs at the info level. You can also use other log levels here
     'browserstack.networkLogs': 'true',
     "build" : buildName, // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-	"browserstack.local" : browserstackLocal,
-	"browserstack.localIdentifier" : browserstackLocalIdentifier,
 	"browserstack.user" : username,
 	"browserstack.key" : accessKey
 }
@@ -97,8 +82,6 @@ const capabilities4 = {
     'browserstack.console': 'info',  // to enable console logs at the info level. You can also use other log levels here
     'browserstack.networkLogs': 'true',
     "build" : buildName, // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-	"browserstack.local" : browserstackLocal,
-	"browserstack.localIdentifier" : browserstackLocalIdentifier,
 	"browserstack.user" : username,
 	"browserstack.key" : accessKey
 }
@@ -112,8 +95,6 @@ const capabilities5 = {
     'browserstack.console': 'info',  // to enable console logs at the info level. You can also use other log levels here
     'browserstack.networkLogs': 'true',
     "build" : buildName, // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-	"browserstack.local" : browserstackLocal,
-	"browserstack.localIdentifier" : browserstackLocalIdentifier,
 	"browserstack.user" : username,
 	"browserstack.key" : accessKey
 };
@@ -122,7 +103,3 @@ runTestWithCaps(capabilities2);
 runTestWithCaps(capabilities3);
 runTestWithCaps(capabilities4);
 runTestWithCaps(capabilities5);
-bs_local.stop(function() {
-    console.log('Stopped BrowserStackLocal');
-  });
-});
